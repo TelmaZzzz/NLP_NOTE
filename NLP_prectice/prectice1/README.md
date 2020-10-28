@@ -10,7 +10,7 @@
 * 用glove预训练的embedding进行初始化 https://nlp.stanford.edu/projects/glove/
 2. CNN如何提取文本的特征
 模型图：
-
+![](https://github.com/TelmaZzzz/NLP_NOTE/tree/master/NLP_prectice/prectice1/TextCnn.png)
 
 
 说明：
