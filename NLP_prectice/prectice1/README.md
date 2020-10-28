@@ -1,5 +1,5 @@
 ## 任务一：基于TextCNN的文本分类
-数据集：Large Movie Review Dataset
+数据集：[Large Movie Review Dataset](http://ai.stanford.edu/~amaas/data/sentiment/)
 
 参考论文：Convolutional Neural Networks for Sentence Classification，https://arxiv.org/abs/1408.5882
 
