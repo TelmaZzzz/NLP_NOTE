@@ -1,4 +1,5 @@
-## 任务一：基于TextCNN的文本分类
+## 基于TextCNN的文本分类
+
 数据集：[Large Movie Review Dataset](http://ai.stanford.edu/~amaas/data/sentiment/)
 
 参考论文：Convolutional Neural Networks for Sentence Classification，https://arxiv.org/abs/1408.5882
@@ -9,6 +10,7 @@
 * 对word embedding随机初始化
 * 用glove预训练的embedding进行初始化 https://nlp.stanford.edu/projects/glove/
 2. CNN如何提取文本的特征
+
 模型图：
 ![](https://github.com/TelmaZzzz/NLP_NOTE/tree/master/NLP_prectice/prectice1/TextCnn.png)
 
@@ -19,3 +21,12 @@
 2. 请将训练集用于训练，测试集用于验证，最后我会再给你一个测试集；
 3. 测试结果格式：每行对应一句话的分类结果；
 当前的SOTA排名：https://github.com/sebastianruder/NLP-progress/blob/master/english/sentiment_analysis.md
+
+## 使用方法
+
+* ``main.py`` 程序主入口，主要功能位load data, load model, train
+* ``model.py`` 模型代码
+* ``train.py`` 训练、验证、预测函数代码
+* ``gen_data.py`` 数据生成脚本
+* ``run.sh`` 运行数据生成脚本
+* ``real_run.sh`` 运行主程序

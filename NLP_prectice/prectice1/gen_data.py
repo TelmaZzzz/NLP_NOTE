@@ -1,4 +1,5 @@
 import os
+import re
 import pandas as pd
 import argparse
 
@@ -30,8 +31,10 @@ if __name__ == "__main__":
     path_gen = '/'.join([args.load_path, args.file_name])
     path_gen = '.'.join([path_gen, "csv"])
     gen(NEG)
+    print("Finish NEG")
     gen(POS)
-    gen(UNSUP)
+    print("Finish POS")
+    # gen(UNSUP)
     data_frame = pd.DataFrame(columns=columns, data=datas)
     data_frame.to_csv(path_gen, sep=",")
 
