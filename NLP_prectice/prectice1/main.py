@@ -13,19 +13,20 @@ import train
 from model import CNN
 
 warnings.filterwarnings('ignore')
+logging.getLogger().setLevel(logging.INFO)
 parser = argparse.ArgumentParser()
 parser.add_argument('--train-load-path', type=str)
 parser.add_argument('--test-load-path', type=str)
-parser.add_argument('--batch-size', type=int, default=20)
+parser.add_argument('--batch-size', type=int, default=64)
 parser.add_argument('--split-pro', type=float, default=0.9)
 parser.add_argument('--embeding-dim', type=int, default=133)
-parser.add_argument('--kernel-num', type=int, default=50)
-parser.add_argument('--kernel-sizes', type=str, default="3,5,7")
+parser.add_argument('--kernel-num', type=int, default=100)
+parser.add_argument('--kernel-sizes', type=str, default="3,4,5")
 parser.add_argument('--fix-length', type=int, default=500)
-parser.add_argument('--dropout', type=float, default=0.2)
+parser.add_argument('--dropout', type=float, default=0.5)
 parser.add_argument('--type', type=str, default='train')
 parser.add_argument('--learning-rate', type=float, default=0.001)
-parser.add_argument('--epochs', type=int, default=20)
+parser.add_argument('--epochs', type=int, default=256)
 parser.add_argument('--save-path', type=str, default=None)
 parser.add_argument('--log-interval', type=str, default=20)
 parser.add_argument('--eval-interval', type=int, default=100)
@@ -83,11 +84,11 @@ if __name__ == '__main__':
     args.embeding_num = len(text_field.vocab)
     args.class_num = len(target_field.vocab)
     args.kernel_sizes = [int(k) for k in args.kernel_sizes.split(',')]
-    print('embeding_num is :{}\nclass_num is :{}'.format(args.embeding_num, args.class_num))
+    logging.info('embeding_num is :{}\nclass_num is :{}'.format(args.embeding_num, args.class_num))
     cnn = CNN(args)
     if(args.type == 'train'):
         train.train(train_iter, validation_iter, cnn, args)
-        print('over')
+        logging.info('over')
 
     elif(args.type == 'predict'):
         pass
