@@ -79,7 +79,7 @@ if __name__ == '__main__':
     text_field.build_vocab(train_data, validation_data)
     target_field.build_vocab(train_data, validation_data)
     train_iter, validation_iter = data.Iterator.splits((train_data, validation_data),
-                                                        batch_sizes=(args.batch_size, args.batch_size),
+                                                        batch_sizes=(args.batch_size, len(validation_data)),
                                                         repeat=False)
     args.embeding_num = len(text_field.vocab)
     args.class_num = len(target_field.vocab)

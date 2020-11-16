@@ -32,7 +32,7 @@ def train(train_iter, validation_iter, model, args):
                 auc = 100.0 * corrects/batch.batch_size
                 logging.info(
                     'step:{}. loss:{}. auc:{}({}/{})'.format(step, loss.item(), auc.item(), 
-                    .item(), batch.batch_size)
+                    corrects.item(), batch.batch_size)
                 )
             
             if step % args.eval_interval == 0:
