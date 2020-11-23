@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--train-data", type=str)
 parser.add_argument("--valid-data", type=str)
 parser.add_argument("--test-data", type=str)
-parser.add_argument("--embed-dim", type=int)
+parser.add_argument("--embed-dim", type=int, default=133)
 parser.add_argument("--batch-size", type=int, default=1)
 parser.add_argument("--type", type=str, default="train")
 parser.add_argument("--learning-rate", type=float, default=0.01)
@@ -21,6 +21,7 @@ parser.add_argument("--weight-decay", type=float, default=1e-4)
 parser.add_argument("--epoch", type=int, default=300)
 parser.add_argument("--hidden-dim", type=int, default=100)
 parser.add_argument("--eval-steps", type=int, default=500)
+parser.add_argument("--log-steps", type=int, default=50)
 
 class MyDataset(data.Dataset):
     @staticmethod
